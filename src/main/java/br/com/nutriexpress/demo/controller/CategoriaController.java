@@ -1,6 +1,6 @@
 package br.com.nutriexpress.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,12 +25,11 @@ import java.util.List;
 public class CategoriaController {
 
     // O @Autowired é usado para injetar automaticamente a dependência do CategoriaService na classe CategoriaController.
-    @Autowired
-    private final CategoriaService categoriaService;
+   private final CategoriaService categoriaService;
 
-    public CategoriaController(CategoriaService categoriaService) {
-        this.categoriaService = categoriaService;
-    }
+public CategoriaController(CategoriaService categoriaService) {
+    this.categoriaService = categoriaService;
+}
 
     @GetMapping
     public ResponseEntity<List<CategoriaResponseDTO>> listarCategorias() {
@@ -88,7 +87,7 @@ public class CategoriaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarCategoria(Long id) {
+    public ResponseEntity<Void> deletarCategoria(@PathVariable Long id) {
         // chama o serviço para deletar a categoria existente pelo ID fornecido.
         categoriaService.deletarCategoria(id);
         // retorna uma resposta HTTP 204 No Content, indicando que a operação foi bem-sucedida, mas não há conteúdo a ser retornado.

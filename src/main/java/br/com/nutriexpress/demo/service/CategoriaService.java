@@ -2,7 +2,7 @@ package br.com.nutriexpress.demo.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import br.com.nutriexpress.demo.repository.CategoriaRepository;
@@ -19,7 +19,7 @@ import br.com.nutriexpress.demo.model.Categoria;
 public class CategoriaService {
 
     // O @Autowired é usado para injetar automaticamente a dependência do CategoriaRepository na classe CategoriaService.
-    @Autowired
+  
     private final CategoriaRepository repository;
 
     public CategoriaService(CategoriaRepository repository) {
